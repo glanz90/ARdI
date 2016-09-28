@@ -17,27 +17,27 @@ public abstract class Dice implements Diceable {
 	public Dice(int faces) {
 		this.faces = faces;
 		rand = new Random();
-		this.face_symbols = new LinkedList<Icon_Symbol>(face_symbols);
+		this.face_symbols = new LinkedList<Icon_Symbol>();
 	}
 	
 	public Dice(int faces, long seed) {
 		this.faces = faces;
 		rand = new Random(seed);
-		this.face_symbols = new LinkedList<Icon_Symbol>(face_symbols);
+		this.face_symbols = new LinkedList<Icon_Symbol>();
 	}
 	
 	public Dice(int faces, Dice_Symbol dice_symbol) {
 		this.faces = faces;
 		rand = new Random();
 		this.dice_symbol = dice_symbol;
-		this.face_symbols = new LinkedList<Icon_Symbol>(face_symbols);
+		this.face_symbols = new LinkedList<Icon_Symbol>();
 	}
 
 	public Dice(int faces, Dice_Symbol dice_symbol, long seed) {
 		this.faces = faces;
 		rand = new Random(seed);
 		this.dice_symbol = dice_symbol;
-		this.face_symbols = new LinkedList<Icon_Symbol>(face_symbols);
+		this.face_symbols = new LinkedList<Icon_Symbol>();
 	}
 	
 	public Dice(int faces, Dice_Symbol dice_symbol, LinkedList<Icon_Symbol> face_symbols) {
