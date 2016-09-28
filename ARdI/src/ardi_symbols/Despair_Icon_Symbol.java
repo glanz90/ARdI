@@ -1,4 +1,6 @@
-package symbols;
+package ardi_symbols;
+
+import symbols.Icon_Symbol;
 
 /**
  * Counts as Failure and may trigger special critical failure effects.

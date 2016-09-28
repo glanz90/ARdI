@@ -1,4 +1,6 @@
-package symbols;
+package ardi_symbols;
+
+import symbols.Icon_Symbol;
 
 /**
  * Positive side effect or benefit associated with action, regardless of success/failure.

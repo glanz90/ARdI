@@ -1,4 +1,6 @@
-package symbols;
+package ardi_symbols;
+
+import symbols.Icon_Symbol;
 
 public class Double_Darkforce_Icon_Symbol extends Icon_Symbol {
 

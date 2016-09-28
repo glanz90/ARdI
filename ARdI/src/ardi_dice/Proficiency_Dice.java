@@ -1,72 +1,48 @@
-package dice;
+package ardi_dice;
 
-import java.util.LinkedList;
+import ardi_symbols.Advantage_Icon_Symbol;
+import ardi_symbols.Blank_Icon_Symbol;
+import ardi_symbols.Double_Advantage_Icon_Symbol;
+import ardi_symbols.Double_Success_Icon_Symbol;
+import ardi_symbols.Proficiency_Dice_Symbol;
+import ardi_symbols.Success_Advantage_Icon_Symbol;
+import ardi_symbols.Success_Icon_Symbol;
+import ardi_symbols.Triumph_Icon_Symbol;
+import dice.Dice_12;
 
-import symbols.Advantage_Icon_Symbol;
-import symbols.Icon_Symbol;
-import symbols.Success_Icon_Symbol;
-import symbols.Triumph_Icon_Symbol;
-
-public class Proficiency_Dice extends Dice_12 implements ARdI_Diceable {
+public class Proficiency_Dice extends Dice_12 {
 	
 	public Proficiency_Dice() {
-		// TODO Auto-generated constructor stub
+		super(new Proficiency_Dice_Symbol());
+		
+		face_symbols.add(new Blank_Icon_Symbol());
+		face_symbols.add(new Success_Icon_Symbol());
+		face_symbols.add(new Success_Icon_Symbol());
+		face_symbols.add(new Double_Success_Icon_Symbol());
+		face_symbols.add(new Double_Success_Icon_Symbol());
+		face_symbols.add(new Advantage_Icon_Symbol());
+		face_symbols.add(new Success_Advantage_Icon_Symbol());
+		face_symbols.add(new Success_Advantage_Icon_Symbol());
+		face_symbols.add(new Success_Advantage_Icon_Symbol());
+		face_symbols.add(new Double_Advantage_Icon_Symbol());
+		face_symbols.add(new Double_Advantage_Icon_Symbol());
+		face_symbols.add(new Triumph_Icon_Symbol());
 	}
 
 	public Proficiency_Dice(long seed) {
-		super(seed);
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public LinkedList<Icon_Symbol> getIcons() {
+		super(new Proficiency_Dice_Symbol(), seed);
 		
-		switch (getValue()) {
-		case 1:
-			break;
-		case 2:
-			list.add(new Success_Icon_Symbol());
-			break;
-		case 3:
-			list.add(new Success_Icon_Symbol());
-			break;
-		case 4:
-			list.add(new Success_Icon_Symbol());
-			list.add(new Success_Icon_Symbol());
-			break;
-		case 5:
-			list.add(new Success_Icon_Symbol());
-			list.add(new Success_Icon_Symbol());
-			break;
-		case 6:
-			list.add(new Advantage_Icon_Symbol());
-			break;
-		case 7:
-			list.add(new Success_Icon_Symbol());
-			list.add(new Advantage_Icon_Symbol());
-			break;
-		case 8:
-			list.add(new Success_Icon_Symbol());
-			list.add(new Advantage_Icon_Symbol());
-			break;
-		case 9:
-			list.add(new Success_Icon_Symbol());
-			list.add(new Advantage_Icon_Symbol());
-			break;
-		case 10:
-			list.add(new Advantage_Icon_Symbol());
-			list.add(new Advantage_Icon_Symbol());
-			break;
-		case 11:
-			list.add(new Advantage_Icon_Symbol());
-			list.add(new Advantage_Icon_Symbol());
-			break;
-		case 12:
-			list.add(new Triumph_Icon_Symbol());
-			break;
-		}
-		
-		return list;
+		face_symbols.add(new Blank_Icon_Symbol());
+		face_symbols.add(new Success_Icon_Symbol());
+		face_symbols.add(new Success_Icon_Symbol());
+		face_symbols.add(new Double_Success_Icon_Symbol());
+		face_symbols.add(new Double_Success_Icon_Symbol());
+		face_symbols.add(new Advantage_Icon_Symbol());
+		face_symbols.add(new Success_Advantage_Icon_Symbol());
+		face_symbols.add(new Success_Advantage_Icon_Symbol());
+		face_symbols.add(new Success_Advantage_Icon_Symbol());
+		face_symbols.add(new Double_Advantage_Icon_Symbol());
+		face_symbols.add(new Double_Advantage_Icon_Symbol());
+		face_symbols.add(new Triumph_Icon_Symbol());
 	}
-
 }

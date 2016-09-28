@@ -1,4 +1,6 @@
-package symbols;
+package ardi_symbols;
+
+import symbols.Icon_Symbol;
 
 /**
  * Counts Success as and may trigger special critical success effects, Critical Hits or Weapon Qualities,

@@ -1,71 +1,48 @@
-package dice;
+package ardi_dice;
 
-import java.util.LinkedList;
+import ardi_symbols.Blank_Icon_Symbol;
+import ardi_symbols.Challenge_Dice_Symbol;
+import ardi_symbols.Despair_Icon_Symbol;
+import ardi_symbols.Double_Failure_Icon_Symbol;
+import ardi_symbols.Double_Threat_Icon_Symbol;
+import ardi_symbols.Failure_Icon_Symbol;
+import ardi_symbols.Failure_Threat_Icon_Symbol;
+import ardi_symbols.Threat_Icon_Symbol;
+import dice.Dice_12;
 
-import symbols.Despair_Icon_Symbol;
-import symbols.Failure_Icon_Symbol;
-import symbols.Icon_Symbol;
-import symbols.Threat_Icon_Symbol;
-
-public class Challenge_Dice extends Dice_12 implements ARdI_Diceable{
+public class Challenge_Dice extends Dice_12 {
 
 	public Challenge_Dice() {
-		// TODO Auto-generated constructor stub
+		super(new Challenge_Dice_Symbol());
+		
+		face_symbols.add(new Blank_Icon_Symbol());
+		face_symbols.add(new Failure_Icon_Symbol());
+		face_symbols.add(new Failure_Icon_Symbol());
+		face_symbols.add(new Double_Failure_Icon_Symbol());
+		face_symbols.add(new Double_Failure_Icon_Symbol());
+		face_symbols.add(new Threat_Icon_Symbol());
+		face_symbols.add(new Threat_Icon_Symbol());
+		face_symbols.add(new Failure_Threat_Icon_Symbol());
+		face_symbols.add(new Failure_Threat_Icon_Symbol());
+		face_symbols.add(new Double_Threat_Icon_Symbol());
+		face_symbols.add(new Double_Threat_Icon_Symbol());
+		face_symbols.add(new Despair_Icon_Symbol());
 	}
 
 	public Challenge_Dice(long seed) {
-		super(seed);
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public LinkedList<Icon_Symbol> getIcons() {
-
-		switch (getValue()) {
-		case 1:
-			break;
-		case 2:
-			list.add(new Failure_Icon_Symbol());
-			break;
-		case 3:
-			list.add(new Failure_Icon_Symbol());
-			break;
-		case 4:
-			list.add(new Failure_Icon_Symbol());
-			list.add(new Failure_Icon_Symbol());
-			break;
-		case 5:
-			list.add(new Failure_Icon_Symbol());
-			list.add(new Failure_Icon_Symbol());
-			break;
-		case 6:
-			list.add(new Threat_Icon_Symbol());
-			break;
-		case 7:
-			list.add(new Threat_Icon_Symbol());
-			break;
-		case 8:
-			list.add(new Failure_Icon_Symbol());
-			list.add(new Threat_Icon_Symbol());
-			break;
-		case 9:
-			list.add(new Failure_Icon_Symbol());
-			list.add(new Threat_Icon_Symbol());
-			break;
-		case 10:
-			list.add(new Threat_Icon_Symbol());
-			list.add(new Threat_Icon_Symbol());
-			break;
-		case 11:
-			list.add(new Threat_Icon_Symbol());
-			list.add(new Threat_Icon_Symbol());
-			break;
-		case 12:
-			list.add(new Despair_Icon_Symbol());
-			break;
-		}
+		super(new Challenge_Dice_Symbol(), seed);
 		
-		return list;
+		face_symbols.add(new Blank_Icon_Symbol());
+		face_symbols.add(new Failure_Icon_Symbol());
+		face_symbols.add(new Failure_Icon_Symbol());
+		face_symbols.add(new Double_Failure_Icon_Symbol());
+		face_symbols.add(new Double_Failure_Icon_Symbol());
+		face_symbols.add(new Threat_Icon_Symbol());
+		face_symbols.add(new Threat_Icon_Symbol());
+		face_symbols.add(new Failure_Threat_Icon_Symbol());
+		face_symbols.add(new Failure_Threat_Icon_Symbol());
+		face_symbols.add(new Double_Threat_Icon_Symbol());
+		face_symbols.add(new Double_Threat_Icon_Symbol());
+		face_symbols.add(new Despair_Icon_Symbol());
 	}
-
 }
