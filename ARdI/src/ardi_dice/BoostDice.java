@@ -6,11 +6,11 @@ import ardi_symbols.Boost_Dice_Symbol;
 import ardi_symbols.Double_Advantage_Icon_Symbol;
 import ardi_symbols.Success_Advantage_Icon_Symbol;
 import ardi_symbols.Success_Icon_Symbol;
-import dice.Dice_6;
+import dice.W006Dice;
 
-public class Boost_Dice extends Dice_6 {
+public class BoostDice extends W006Dice {
 
-	public Boost_Dice() {
+	public BoostDice() {
 		super(new Boost_Dice_Symbol());
 		
 		face_symbols.add(new Blank_Icon_Symbol());
@@ -21,7 +21,7 @@ public class Boost_Dice extends Dice_6 {
 		face_symbols.add(new Success_Icon_Symbol());
 	}
 	
-	public Boost_Dice(long seed) {
+	public BoostDice(byte[] seed) {
 		super(new Boost_Dice_Symbol(), seed);
 
 		face_symbols.add(new Blank_Icon_Symbol());
@@ -30,5 +30,9 @@ public class Boost_Dice extends Dice_6 {
 		face_symbols.add(new Advantage_Icon_Symbol());
 		face_symbols.add(new Success_Advantage_Icon_Symbol());
 		face_symbols.add(new Success_Icon_Symbol());
+	}
+
+	public String toString() {
+		return "BoostDice";
 	}
 }
