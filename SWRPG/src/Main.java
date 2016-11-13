@@ -3,7 +3,6 @@ import java.util.Arrays;
 
 import dice.BoostDice;
 import dice.Dice;
-import dice.W020Dice;
 
 public class Main {
 
@@ -18,7 +17,6 @@ public class Main {
 		System.out.println(dice.getValue());
 		
 		DiceSet set = new DiceSet();
-		//set.newDiceToSet(new W020Dice());
 		
 		int test[] = {3,5,0,1,2,4,5,8};
 		

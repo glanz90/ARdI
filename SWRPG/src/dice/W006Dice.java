@@ -2,9 +2,9 @@ package dice;
 
 import java.util.LinkedList;
 
-import symbols.Dice_Symbol;
-import symbols.Icon_Symbol;
-import symbols.W006_Dice_Symbol;
+import symbols.DiceSymbols.Dice_Symbol;
+import symbols.DiceSymbols.W006_Dice_Symbol;
+import symbols.IconSymbols.IconSymbol;
 
 public class W006Dice extends Dice {
 
@@ -27,11 +27,11 @@ public class W006Dice extends Dice {
 		super(6, DiceType.W006Dice, dice_symbol, seed);
 	}
 	
-	public W006Dice(Dice_Symbol dice_symbol, LinkedList<Icon_Symbol> face_symbols) {
+	public W006Dice(Dice_Symbol dice_symbol, LinkedList<IconSymbol> face_symbols) {
 		super(6, DiceType.W006Dice, dice_symbol, face_symbols);
 	}
 
-	public W006Dice(Dice_Symbol dice_symbol, LinkedList<Icon_Symbol> face_symbols, byte[] seed) {
+	public W006Dice(Dice_Symbol dice_symbol, LinkedList<IconSymbol> face_symbols, byte[] seed) {
 		super(6, DiceType.W006Dice, dice_symbol, face_symbols, seed);
 	}
 	
@@ -55,11 +55,11 @@ public class W006Dice extends Dice {
 		super(6, type, dice_symbol, seed);
 	}
 	
-	public W006Dice(DiceType type, Dice_Symbol dice_symbol, LinkedList<Icon_Symbol> face_symbols) {
+	public W006Dice(DiceType type, Dice_Symbol dice_symbol, LinkedList<IconSymbol> face_symbols) {
 		super(6, type, dice_symbol, face_symbols);
 	}
 
-	public W006Dice(DiceType type, Dice_Symbol dice_symbol, LinkedList<Icon_Symbol> face_symbols, byte[] seed) {
+	public W006Dice(DiceType type, Dice_Symbol dice_symbol, LinkedList<IconSymbol> face_symbols, byte[] seed) {
 		super(6, type, dice_symbol, face_symbols, seed);
 	}
 }

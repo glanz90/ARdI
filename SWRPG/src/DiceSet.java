@@ -2,7 +2,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 import dice.Dice;
-import symbols.Icon_Symbol;
+import symbols.IconSymbols.IconSymbol;
 
 public class DiceSet implements Iterable<Dice>{
 
@@ -100,8 +100,8 @@ public class DiceSet implements Iterable<Dice>{
 		return retString;
 	}
 	
-	public LinkedList<Icon_Symbol> getDiceRoll() {
-		LinkedList<Icon_Symbol> roll = new LinkedList<Icon_Symbol>();
+	public LinkedList<IconSymbol> getDiceRoll() {
+		LinkedList<IconSymbol> roll = new LinkedList<IconSymbol>();
 		
 		for(Dice nextDice : diceSet) {
 			roll.add(nextDice.getThrow());
