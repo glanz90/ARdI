@@ -8,31 +8,55 @@ import symbols.Icon_Symbol;
 public class W012Dice extends Dice {
 
 	public W012Dice() {
-		super(12);
+		super(12, DiceType.W012Dice);
 		//to do add symbols
 	}
 	
 	public W012Dice(byte[] seed) {
-		super(12, seed);
+		super(12, DiceType.W012Dice, seed);
 	}
 	
 	public W012Dice(Dice_Symbol dice_symbol) {
-		super(12, dice_symbol);
+		super(12, DiceType.W012Dice, dice_symbol);
 	}
 
 	public W012Dice(Dice_Symbol dice_symbol, byte[] seed) {
-		super(12, dice_symbol, seed);
+		super(12, DiceType.W012Dice, dice_symbol, seed);
 	}
 	
 	public W012Dice(Dice_Symbol dice_symbol, LinkedList<Icon_Symbol> face_symbols) {
-		super(12, dice_symbol, face_symbols);
+		super(12, DiceType.W012Dice, dice_symbol, face_symbols);
 	}
 
 	public W012Dice(Dice_Symbol dice_symbol, LinkedList<Icon_Symbol> face_symbols, byte[] seed) {
-		super(12, dice_symbol, face_symbols, seed);
+		super(12, DiceType.W012Dice, dice_symbol, face_symbols, seed);
 	}
 	
-	public String toString() {
-		return "W012Dice";
+	//---------------------------------------------------------------------------------------------
+
+	public W012Dice(DiceType type) {
+		super(12, type);
+		//to do add symbols
 	}
+	
+	public W012Dice(DiceType type, byte[] seed) {
+		super(12, type, seed);
+	}
+	
+	public W012Dice(DiceType type, Dice_Symbol dice_symbol) {
+		super(12, type, dice_symbol);
+	}
+
+	public W012Dice(DiceType type, Dice_Symbol dice_symbol, byte[] seed) {
+		super(12, type, dice_symbol, seed);
+	}
+	
+	public W012Dice(DiceType type, Dice_Symbol dice_symbol, LinkedList<Icon_Symbol> face_symbols) {
+		super(12, type, dice_symbol, face_symbols);
+	}
+
+	public W012Dice(DiceType type, Dice_Symbol dice_symbol, LinkedList<Icon_Symbol> face_symbols, byte[] seed) {
+		super(12, type, dice_symbol, face_symbols, seed);
+	}
+	
 }

@@ -1,6 +1,4 @@
-package ardi_symbols;
-
-import symbols.Icon_Symbol;
+package symbols;
 
 /**
  * Cancels Advantage when determining side effects of action.

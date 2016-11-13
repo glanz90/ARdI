@@ -1,6 +1,4 @@
-package ardi_symbols;
-
-import symbols.Icon_Symbol;
+package symbols;
 
 public class Success_Advantage_Icon_Symbol extends Icon_Symbol {
 

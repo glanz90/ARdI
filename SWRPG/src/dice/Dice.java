@@ -9,60 +9,91 @@ import symbols.Icon_Symbol;
 
 public abstract class Dice implements Diceable {
 
+	private DiceType type;
 	private SecureRandom rand;
-	protected int faces;
-	protected Dice_Symbol dice_symbol;
+	private int faces;
+	private Dice_Symbol dice_symbol;
 	protected LinkedList<Icon_Symbol> face_symbols;
 
 	public Dice(int faces) {
+		this.type = DiceType.DefaultDice;
 		this.faces = faces;
 		rand = new SecureRandom();
 		this.face_symbols = new LinkedList<Icon_Symbol>();
 	}
 	
 	public Dice(int faces, byte[] seed) {
+		this.type = DiceType.DefaultDice;
 		this.faces = faces;
 		rand = new SecureRandom(seed);
 		this.face_symbols = new LinkedList<Icon_Symbol>();
 	}
 	
-	public Dice(int faces, Dice_Symbol dice_symbol) {
+	public Dice(int faces, DiceType type) {
+		this.type = type;
+		this.faces = faces;
+		rand = new SecureRandom();
+		this.face_symbols = new LinkedList<Icon_Symbol>();
+	}
+	
+	public Dice(int faces, DiceType type, byte[] seed) {
+		this.type = type;
+		this.faces = faces;
+		rand = new SecureRandom(seed);
+		this.face_symbols = new LinkedList<Icon_Symbol>();
+	}
+	
+	public Dice(int faces, DiceType type, Dice_Symbol dice_symbol) {
+		this.type = type;
 		this.faces = faces;
 		rand = new SecureRandom();
 		this.dice_symbol = dice_symbol;
 		this.face_symbols = new LinkedList<Icon_Symbol>();
 	}
 
-	public Dice(int faces, Dice_Symbol dice_symbol, byte[] seed) {
+	public Dice(int faces, DiceType type, Dice_Symbol dice_symbol, byte[] seed) {
+		this.type = type;
 		this.faces = faces;
 		rand = new SecureRandom(seed);
 		this.dice_symbol = dice_symbol;
 		this.face_symbols = new LinkedList<Icon_Symbol>();
 	}
 	
-	public Dice(int faces, Dice_Symbol dice_symbol, LinkedList<Icon_Symbol> face_symbols) {
+	public Dice(int faces, DiceType type, Dice_Symbol dice_symbol, LinkedList<Icon_Symbol> face_symbols) {
+		this.type = type;
 		this.faces = faces;
 		rand = new SecureRandom();
 		this.dice_symbol = dice_symbol;
 		this.face_symbols = new LinkedList<Icon_Symbol>(face_symbols);
 	}
 
-	public Dice(int faces, Dice_Symbol dice_symbol, LinkedList<Icon_Symbol> face_symbols, byte[] seed) {
+	public Dice(int faces, DiceType type, Dice_Symbol dice_symbol, LinkedList<Icon_Symbol> face_symbols, byte[] seed) {
+		this.type = type;
 		this.faces = faces;
 		rand = new SecureRandom(seed);
 		this.dice_symbol = dice_symbol;
 		this.face_symbols = new LinkedList<Icon_Symbol>(face_symbols);
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	
+	public int getValue0() {
+		return rand.nextInt(faces);
+	}
+	
+	public int getValue1() {
+		return (getValue0() + 1);
 	}
 	
 	public int getValue() {
-		return (rand.nextInt(faces) + 1);
+		return getValue1();
 	}
 
 	public int getFaces() {
 		return faces;
 	}
 	
-	public Dice_Symbol getDice_symbol() {
+	public Dice_Symbol getDiceSymbol() {
 		return dice_symbol;
 	}
 	
@@ -81,6 +112,8 @@ public abstract class Dice implements Diceable {
 		return list;
 	}
 	
-	public abstract String toString();
+	public DiceType getDiceType() {
+		return type;
+	}
 }
 
