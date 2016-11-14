@@ -1,8 +1,11 @@
+package diceroll;
+
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
 
 import dice.Dice;
-import symbols.IconSymbols.IconSymbol;
+
 
 public class DiceSet implements Iterable<Dice>{
 
@@ -13,11 +16,15 @@ public class DiceSet implements Iterable<Dice>{
 	{
 		diceSet = new LinkedList<Dice>();
 		
-		for(int i : numberOfDice){
-			numberOfDice[i] = 0;
-		}
+		numberOfDice = new int[8];
 	}
 	
+	public DiceSet(DiceSet copyThis){
+		diceSet = new LinkedList<Dice>(copyThis.getDiceSet());
+		
+		numberOfDice = Arrays.copyOf(copyThis.numberOfDice, 8);
+	}
+		
 	public void newDiceToSet(Dice newDice) {
 		int offset = 0;
 			
@@ -31,43 +38,43 @@ public class DiceSet implements Iterable<Dice>{
 		case BoostDice:
 			offset = numberOfDice[0];
 			diceSet.add(offset, newDice);
-			numberOfDice[2]++;
+			numberOfDice[1]++;
 		break;
 
 		case AbilityDice:
 			offset = numberOfDice[0] + numberOfDice[1];
 			diceSet.add(offset, newDice);
-			numberOfDice[3]++;
+			numberOfDice[2]++;
 		break;
 		
 		case ProficiencyDice:
 			offset = numberOfDice[0] + numberOfDice[1] + numberOfDice[2];
 			diceSet.add(offset, newDice);
-			numberOfDice[4]++;
+			numberOfDice[3]++;
 		break;
 
 		case SetbackDice:
 			offset = numberOfDice[0] + numberOfDice[1] + numberOfDice[2] + numberOfDice[3];
 			diceSet.add(offset, newDice);
-			numberOfDice[5]++;
+			numberOfDice[4]++;
 		break;
 
 		case DifficultyDice:
 			offset = numberOfDice[0] + numberOfDice[1] + numberOfDice[2] + numberOfDice[3] + numberOfDice[4];
 			diceSet.add(offset, newDice);
-			numberOfDice[6]++;
+			numberOfDice[5]++;
 		break;
 
 		case ChallengeDice:
 			offset = numberOfDice[0] + numberOfDice[1] + numberOfDice[2] + numberOfDice[3] + numberOfDice[4] + numberOfDice[5];
 			diceSet.add(offset, newDice);
-			numberOfDice[7]++;
+			numberOfDice[6]++;
 		break;
 		
 		case ForceDice:
 			offset = numberOfDice[0] + numberOfDice[1] + numberOfDice[2] + numberOfDice[3] + numberOfDice[4] + numberOfDice[5] + numberOfDice[6];
 			diceSet.add(offset, newDice);
-			numberOfDice[1]++;
+			numberOfDice[7]++;
 		break;
 		
 		default:
@@ -84,6 +91,10 @@ public class DiceSet implements Iterable<Dice>{
 		return numberOfDice;
 	}
 	
+	public LinkedList<Dice> getDiceSet() {
+		return diceSet;
+	}
+	
 	public String toString()
 	{
 		String retString = "Diceset: ";
@@ -98,16 +109,6 @@ public class DiceSet implements Iterable<Dice>{
 			retString += "\n   Force " + numberOfDice[7];
 		
 		return retString;
-	}
-	
-	public LinkedList<IconSymbol> getDiceRoll() {
-		LinkedList<IconSymbol> roll = new LinkedList<IconSymbol>();
-		
-		for(Dice nextDice : diceSet) {
-			roll.add(nextDice.getThrow());
-		}
-		
-		return roll;
 	}
 
 }

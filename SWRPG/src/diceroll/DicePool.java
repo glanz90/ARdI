@@ -1,3 +1,5 @@
+package diceroll;
+
 import java.lang.reflect.Array;
 import java.security.SecureRandom;
 import dice.AbilityDice;
@@ -99,8 +101,9 @@ public class DicePool {
 		for(i = 0; i < numberOfDice[7]; i++) {
 			set.newDiceToSet(new ForceDice(forceRand.generateSeed(8)));
 		}
-		
+
 		return set;
+		//return new DiceSet(set);
 	}
 	
 }
